@@ -35,9 +35,13 @@ object HelloScala extends App {
 
 
   //call by name : passing the function as parameter to other function
-  def printTime() = System.currentTimeMillis()
+  // => symbol is used to invoke the inside funtion later
+  def printTime() = {
+    println("Inside time")
+    System.currentTimeMillis()
+  }
 
-  def test(value: Long) = {
+  def test(value: => Long) = {
     println("Call by name functionality")
     println("Inside Test method")
     println("time = " + value)
